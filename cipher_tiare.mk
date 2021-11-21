@@ -12,14 +12,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_go_phone.mk)
+$(call inherit-product, vendor/cipher/config/common_full_phone.mk)
 
 # Inherit from tiare device
 $(call inherit-product, device/xiaomi/tiare/device.mk)
 
+# Cipher Stuff
+TARGET_BOOTANIMATION_RES := 720
+CIPHER_OFFICIAL := true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tiare
-PRODUCT_NAME := lineage_tiare
+PRODUCT_NAME := cipher_tiare
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Go
